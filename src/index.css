@@ -1,0 +1,345 @@
+/* Normalise browser default setting opinionated */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Type face */
+@font-face {
+  font-family: ubuntu;
+  src: url(./assets/fonts/ubuntu-b.woff);
+}
+
+/******************************************/
+/* general default setting
+/******************************************/
+body {
+  font-family: "ubuntu", sans-serif;
+  font-size: 100%;
+  background-color: #f5f5f5;
+  color: #949292;
+}
+
+img {
+  width: 100%;
+}
+
+p,
+h1,
+h2 {
+  line-height: 1.5;
+  padding: 5px;
+}
+
+time {
+  font-size: 11px;
+  font-weight: 200;
+  margin: 0 2%;
+}
+
+a:visited,
+a:active,
+a:link {
+  color: #d6a7a5;
+}
+
+/******************************************/
+/* Layout style setting
+/******************************************/
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+@media all and (min-width: 769px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media all and (min-width: 990px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media all and (min-width: 1500px) {
+  .container {
+    width: 1400px;
+  }
+}
+
+/******************************************/
+/* HeroArea component style setting
+/******************************************/
+
+@keyframes slider {
+  0% {
+    left: 0%;
+  }
+  10% {
+    left: 0%;
+  }
+  12% {
+    left: -100%;
+  }
+  22% {
+    left: -100%;
+  }
+  24% {
+    left: -200%;
+  }
+  34% {
+    left: -200%;
+  }
+  36% {
+    left: -300%;
+  }
+  46% {
+    left: -300%;
+  }
+  48% {
+    left: -400%;
+  }
+  58% {
+    left: -400%;
+  }
+  60% {
+    left: -300%;
+  }
+  70% {
+    left: -300%;
+  }
+  72% {
+    left: -200%;
+  }
+  82% {
+    left: -200%;
+  }
+  84% {
+    left: -100%;
+  }
+  94% {
+    left: -100%;
+  }
+  96% {
+    left: 0%;
+  }
+}
+.hero-container {
+  overflow: hidden;
+  height: 200px;
+}
+.slider-container {
+  position: relative;
+  width: 500%;
+  top: 0;
+  left: 0;
+  animation: slider 60s infinite;
+}
+.slider-container .slider {
+  width: 20%;
+  height: auto;
+  float: left;
+  position: relative;
+}
+
+@media all and (min-width: 769px) {
+  .hero-container {
+    height: 500px;
+  }
+}
+
+/******************************************/
+/* Filter component style setting
+/******************************************/
+.filter-container {
+  margin: 20px 0;
+  padding: 5px 0;
+}
+#toggle-collapse {
+  display: none;
+}
+
+.filter-heading {
+  padding: 15px 1%;
+  cursor: pointer;
+}
+
+.filter-heading h1 {
+  font-size: 1.2em;
+}
+
+@media all and (max-width: 768px) {
+  .filter-heading {
+    border: 1px solid #eee;
+  }
+  .filter-heading .icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #777;
+    background: url(./assets/images/chevron-arrow-down.svg) no-repeat center /
+      15px;
+    float: right;
+    cursor: pointer;
+    margin-top: -5px;
+  }
+
+  #toggle-collapse:checked ~ .heading .icon {
+    background: url(./assets/images/chevron-arrow-up.svg) no-repeat center /
+      15px;
+  }
+
+  .filter-button-container {
+    transition: all 0.65s;
+    max-height: 0;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  #toggle-collapse:checked ~ .filter-button-container {
+    max-height: 80px;
+  }
+}
+
+@media all and (min-width: 769px) {
+  .filter-container {
+    border: 1px solid #eee;
+    box-shadow: 0px 2px 4px #ccc;
+    margin: 40px 0;
+  }
+  .filter-heading {
+    float: left;
+  }
+  .filter-button-container {
+    float: right;
+    width: 70%;
+    text-align: right;
+    margin-top: 8px;
+  }
+}
+
+/******************************************/
+/* PostCard component style setting
+/******************************************/
+.postcard-container {
+  margin: 30px 0px;
+  min-height: 390px;
+  border-bottom: 1px solid #eee;
+}
+.postcard-container header {
+  position: relative;
+  /* border: 1px solid red; */
+}
+.post-header {
+  font-size: 1.0625em;
+  padding: 10px;
+  font-weight: 300;
+  color: #444;
+}
+.publish-date {
+  font-size: 12px;
+  text-align: right;
+}
+.post-text {
+  padding: 10px;
+}
+
+.postcard-container a {
+  font-size: 14px;
+  padding: 10px;
+  display: inline-block;
+}
+
+@media all and (min-width: 769px) {
+  .postcard-container {
+    border: 1px solid #eee;
+  }
+
+  .post-header {
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
+
+/******************************************/
+/* Post Card list component style setting
+/******************************************/
+
+@media all and (min-width: 769px) {
+  .postcardlist-container {
+    text-align: center;
+  }
+  .postcardlist-container article {
+    display: inline-block;
+    vertical-align: top;
+    width: 29.3333333%;
+    margin: 30px 1%;
+    text-align: left;
+  }
+}
+/******************************************/
+/* Social Media Icon component style setting
+/******************************************/
+.social-media .icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  background-position: center;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -20px;
+  left: 10px;
+}
+
+.social-media .twitter {
+  background-color: #000;
+  background-image: url("./assets/images/twitter.svg");
+}
+.social-media .instagram {
+  background-color: #000;
+  background-image: url("./assets/images/instagram.svg");
+}
+.social-media .aff {
+  line-height: 40px;
+}
+
+/******************************************/
+/* Button component style setting
+/******************************************/
+.btn {
+  padding: 10px;
+  font-size: 0.75em;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px 1%;
+  outline: none;
+  border: none;
+}
+
+@media all and (max-width: 768px) {
+}
+@media all and (min-width: 769px) {
+  .btn {
+    font-size: 1.125em;
+  }
+}
+
+/******************************************/
+/* Helper class style 
+/******************************************/
+.clearfix::after {
+  content: "";
+  display: block;
+  width: 100%;
+  clear: both;
+}
