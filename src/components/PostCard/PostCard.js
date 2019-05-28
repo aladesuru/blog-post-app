@@ -1,7 +1,7 @@
 import React from "react";
 
-import Image from "../Image";
-import image from "../../assets/images/slider-image-1.jpg";
+// import Image from "../Image";
+// import image from "../../assets/images/slider-image-1.jpg";
 import SocialMediaIcon from "../SocialMediaIcon";
 
 const Link = ({ link }) => {
@@ -17,9 +17,7 @@ const PostCard = ({ url, text, publishDate, header, link, serviceName }) => {
     <article className="postcard-container">
       <header>
         <SocialMediaIcon serviceName={serviceName} />
-        <div className="post-image">
-          <Image url={url} />
-        </div>
+        <div className="post-image">{/* <Image url={url} /> */}</div>
         <h2 className="post-header">
           {header}
           <div className="publish-date">

@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "../Image";
 
 const SocialMediaIcon = ({ serviceName }) => {
   let icon;

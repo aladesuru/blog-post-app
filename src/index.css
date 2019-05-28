@@ -66,7 +66,7 @@ a:link {
   }
 }
 
-@media all and (min-width: 1500px) {
+@media all and (min-width: 2000px) {
   .container {
     width: 1400px;
   }
@@ -228,7 +228,6 @@ a:link {
 /******************************************/
 .postcard-container {
   margin: 30px 0px;
-  min-height: 390px;
   border-bottom: 1px solid #eee;
 }
 .postcard-container header {
@@ -237,7 +236,7 @@ a:link {
 }
 .post-header {
   font-size: 1.0625em;
-  padding: 10px;
+  padding: 30px 10px;
   font-weight: 300;
   color: #444;
 }
@@ -253,11 +252,14 @@ a:link {
   font-size: 14px;
   padding: 10px;
   display: inline-block;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 @media all and (min-width: 769px) {
   .postcard-container {
     border: 1px solid #eee;
+    min-height: 400px;
   }
 
   .post-header {
@@ -277,11 +279,18 @@ a:link {
   .postcardlist-container article {
     display: inline-block;
     vertical-align: top;
-    width: 29.3333333%;
+    width: 45.3333333%;
     margin: 30px 1%;
     text-align: left;
   }
 }
+
+@media all and (min-width: 990px) {
+  .postcardlist-container article {
+    width: 29.3333333%;
+  }
+}
+
 /******************************************/
 /* Social Media Icon component style setting
 /******************************************/
@@ -302,11 +311,11 @@ a:link {
 }
 
 .social-media .twitter {
-  background-color: #000;
+  background-color: #00acee;
   background-image: url("./assets/images/twitter.svg");
 }
 .social-media .instagram {
-  background-color: #000;
+  background-color: #3f729b;
   background-image: url("./assets/images/instagram.svg");
 }
 .social-media .aff {
@@ -324,6 +333,10 @@ a:link {
   margin: 5px 1%;
   outline: none;
   border: none;
+}
+
+.loadmore-post {
+  text-align: center;
 }
 
 @media all and (max-width: 768px) {

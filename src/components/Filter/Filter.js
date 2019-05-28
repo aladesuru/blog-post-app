@@ -2,7 +2,11 @@ import React from "react";
 
 import Button from "../Button";
 
-const Filter = () => {
+const Filter = ({ filterPost }) => {
+  const twitterClick = e => {
+    filterPost(e.target.id);
+  };
+
   return (
     <div className="filter-container clearfix">
       <div className="collapse">
@@ -15,10 +19,10 @@ const Filter = () => {
             </label>
           </h1>
         </div>
-        <div className="filter-button-container">
-          <Button />
-          <Button buttonLabel="Twitter" bgColor="#00acee" />
-          <Button buttonLabel="Instagram" bgColor="#3f729b" />
+        <div className="filter-button-container" onClick={twitterClick}>
+          <Button id="manual" />
+          <Button buttonLabel="Twitter" bgColor="#00acee" id="twitter" />
+          <Button buttonLabel="Instagram" bgColor="#3f729b" id="instagram" />
         </div>
       </div>
     </div>
