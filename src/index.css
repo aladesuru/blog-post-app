@@ -178,7 +178,7 @@ a:link {
     margin-top: -5px;
   }
 
-  #toggle-collapse:checked ~ .heading .icon {
+  #toggle-collapse:checked ~ .filter-heading .icon {
     background: url(./assets/images/chevron-arrow-up.svg) no-repeat center /
       15px;
   }
