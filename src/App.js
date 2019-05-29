@@ -1,27 +1,25 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import "./App.css";
 
 //import components
 import HeroArea from "./components/HeroArea";
 import Layout from "./components/Layout";
 import Filter from "./components/Filter";
 import PostCardList from "./components/PostCardList";
-import LoadMorePost from "./components/LoadMorePost";
+import LoadingScreen from "./components/LoadingScreen";
 
 class App extends Component {
   state = {
     post: [],
     filteredPost: [],
     isLoading: true,
-    error: false,
-    limit: 6
+    error: false
   };
 
   componentDidMount() {
     this.FetchPostFrmAPI();
   }
-
+  // method use to fetch the data
   FetchPostFrmAPI = () => {
     axios
       .get("http://private-cc77e-aff.apiary-mock.com/posts")
@@ -41,8 +39,10 @@ class App extends Component {
       });
   };
 
+  // callback funtion as props for the production list component
   filterPost = qryString => {
     console.log("target id is ", qryString);
+    this.FetchPostFrmAPI();
     let result;
     if (qryString === "twitter") {
       result = this.state.post.filter(
@@ -64,31 +64,19 @@ class App extends Component {
     }
   };
 
-  loadMorePost = () => {
-    this.setState(prevState => {
-      return {
-        limit: prevState.limit + 6
-      };
-    });
-  };
-
   render() {
     return (
       <div className="App">
         <HeroArea />
         {this.state.isLoading ? (
-          "Loading"
+          <LoadingScreen />
         ) : (
           <Layout>
             <Filter filterPost={this.filterPost} />
             <PostCardList
               listOfPost={this.state.post}
               filteredPost={this.state.filteredPost}
-              limit={this.state.limit}
             />
-            {this.state.limit < this.state.post.length && (
-              <LoadMorePost loadMorePost={this.loadMorePost} />
-            )}
           </Layout>
         )}
       </div>
