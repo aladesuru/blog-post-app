@@ -7,6 +7,7 @@ import Layout from "./components/Layout";
 import Filter from "./components/Filter";
 import PostCardList from "./components/PostCardList";
 import LoadingScreen from "./components/LoadingScreen";
+import ErrorComponent from "./components/ErrorComponent";
 
 class App extends Component {
   state = {
@@ -32,7 +33,6 @@ class App extends Component {
       })
       .catch(error => {
         // handle error: for the purpose of the code test ,in real world is different
-        console.log("Error fetching and parsing data", error);
         this.setState({
           error: true
         });
@@ -41,7 +41,6 @@ class App extends Component {
 
   // callback funtion as props for the production list component
   filterPost = qryString => {
-    console.log("target id is ", qryString);
     this.FetchPostFrmAPI();
     let result;
     if (qryString === "twitter") {
@@ -67,17 +66,25 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <HeroArea />
-        {this.state.isLoading ? (
-          <LoadingScreen />
+        {this.state.error ? (
+          <ErrorComponent content="Error fetching and parsing data please try again later" />
         ) : (
-          <Layout>
-            <Filter filterPost={this.filterPost} />
-            <PostCardList
-              listOfPost={this.state.post}
-              filteredPost={this.state.filteredPost}
-            />
-          </Layout>
+          <div>
+            {this.state.isLoading ? (
+              <LoadingScreen />
+            ) : (
+              <div>
+                <HeroArea />
+                <Layout>
+                  <Filter filterPost={this.filterPost} />
+                  <PostCardList
+                    listOfPost={this.state.post}
+                    filteredPost={this.state.filteredPost}
+                  />
+                </Layout>
+              </div>
+            )}
+          </div>
         )}
       </div>
     );
