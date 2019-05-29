@@ -14,7 +14,7 @@ const SocialMediaIcon = ({ serviceName }) => {
   return <div className="social-media">{icon}</div>;
 };
 
-SocialMediaIcon.prototype = {
+SocialMediaIcon.propTypes = {
   serviceName: PropTypes.string.isRequired
 };
 export default SocialMediaIcon;

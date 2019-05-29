@@ -28,8 +28,8 @@ const Filter = ({ filterPost }) => {
   );
 };
 
-Filter.prototype = {
-  filterPost: PropTypes.arrayOf(PropTypes.object).isRequired
+Filter.propTypes = {
+  filterPost: PropTypes.func.isRequired
 };
 
 export default Filter;

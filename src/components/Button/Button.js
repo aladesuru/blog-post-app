@@ -21,7 +21,7 @@ Button.defaultProps = {
   title: "general"
 };
 
-Button.prototype = {
+Button.propTypes = {
   buttonLabel: PropTypes.string.isRequired,
   color: PropTypes.string,
   bgColor: PropTypes.string,

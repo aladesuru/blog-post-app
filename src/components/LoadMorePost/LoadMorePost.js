@@ -12,7 +12,7 @@ const LoadMorePost = ({ loadMorePost }) => {
   );
 };
 
-LoadMorePost.prototype = {
+LoadMorePost.propTypes = {
   loadMorePost: PropTypes.func.isRequired
 };
 

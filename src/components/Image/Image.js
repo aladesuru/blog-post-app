@@ -10,7 +10,7 @@ const Image = ({ url }) => {
   return <img src={url} alt="post" onError={handleOnError} />;
 };
 
-Image.prototype = {
+Image.propTypes = {
   url: PropTypes.string.isRequired
 };
 

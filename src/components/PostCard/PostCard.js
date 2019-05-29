@@ -36,7 +36,7 @@ const PostCard = ({ url, text, publishDate, header, link, serviceName }) => {
   );
 };
 
-PostCard.prototype = {
+PostCard.propTypes = {
   url: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   publishDate: PropTypes.string.isRequired,

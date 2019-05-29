@@ -9,8 +9,8 @@ Layout.defaultProps = {
   children: "Place your child component here"
 };
 
-Layout.prototype = {
-  children: PropTypes.string.isRequired
+Layout.propTypes = {
+  children: PropTypes.node.isRequired
 };
 
 export default Layout;
