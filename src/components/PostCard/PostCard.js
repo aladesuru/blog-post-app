@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import SocialMediaIcon from "../SocialMediaIcon";
+import Image from "../Image";
 
 const Link = ({ link }) => {
   return (
@@ -16,7 +17,9 @@ const PostCard = ({ url, text, publishDate, header, link, serviceName }) => {
     <article className="postcard-container">
       <header>
         <SocialMediaIcon serviceName={serviceName} />
-        <div className="post-image">{/* <Image url={url} /> */}</div>
+        <div className="post-image">
+          {serviceName.toLowerCase() === "twitter" ? " " : <Image url={url} />}
+        </div>
         <h2 className="post-header">
           {header}
           <div className="publish-date">
@@ -34,6 +37,7 @@ const PostCard = ({ url, text, publishDate, header, link, serviceName }) => {
 };
 
 PostCard.prototype = {
+  url: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   publishDate: PropTypes.string.isRequired,
   header: PropTypes.string.isRequired,
