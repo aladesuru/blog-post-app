@@ -15,9 +15,7 @@ const Filter = ({ filterPost }) => {
         <div className="filter-heading">
           <h1>
             <span>Posts Category</span>
-            <label htmlFor="toggle-collapse">
-              <span className="icon" />
-            </label>
+            <label htmlFor="toggle-collapse" className="icon" />
           </h1>
         </div>
         <div className="filter-button-container" onClick={postCategoryClick}>
