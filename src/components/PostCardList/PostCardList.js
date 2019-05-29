@@ -42,13 +42,20 @@ class PostCardList extends Component {
               content = post.item_data.text;
             }
 
+            let imageSrc;
+            if (post.item_data.image_url) {
+              imageSrc = post.item_data.image_url;
+            } else {
+              imageSrc = post.item_data.image;
+            }
+
             let publishDate = post.item_published.split(" ");
             publishDate = publishDate[0];
 
             return (
               <PostCard
                 key={post.item_id}
-                url={post.item_data.image_url}
+                url={imageSrc}
                 text={content}
                 header={post.item_name}
                 link={post.item_data.link}
