@@ -23,7 +23,7 @@ class App extends Component {
   // method use to fetch the data
   FetchPostFrmAPI = () => {
     axios
-      .get("http://private-cc77e-aff.apiary-mock.com/posts")
+      .get("https://private-cc77e-aff.apiary-mock.com/posts")
       .then(response => {
         // handle success
         this.setState({
