@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import Button from "../Button";
 
@@ -27,6 +28,10 @@ const Filter = ({ filterPost }) => {
       </div>
     </div>
   );
+};
+
+Filter.prototype = {
+  filterPost: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default Filter;

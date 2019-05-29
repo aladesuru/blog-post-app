@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const SocialMediaIcon = ({ serviceName }) => {
   let icon;
@@ -11,5 +12,9 @@ const SocialMediaIcon = ({ serviceName }) => {
   }
 
   return <div className="social-media">{icon}</div>;
+};
+
+SocialMediaIcon.prototype = {
+  serviceName: PropTypes.string.isRequired
 };
 export default SocialMediaIcon;

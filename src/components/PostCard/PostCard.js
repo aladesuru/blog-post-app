@@ -1,7 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-// import Image from "../Image";
-// import image from "../../assets/images/slider-image-1.jpg";
 import SocialMediaIcon from "../SocialMediaIcon";
 
 const Link = ({ link }) => {
@@ -22,7 +21,7 @@ const PostCard = ({ url, text, publishDate, header, link, serviceName }) => {
           {header}
           <div className="publish-date">
             Publish:
-            <time datatime="2011-10-15" pubdate="pubdate">
+            <time datatime={publishDate} pubdate="pubdate">
               {publishDate}
             </time>
           </div>
@@ -32,6 +31,14 @@ const PostCard = ({ url, text, publishDate, header, link, serviceName }) => {
       <Link link={link} />
     </article>
   );
+};
+
+PostCard.prototype = {
+  text: PropTypes.string.isRequired,
+  publishDate: PropTypes.string.isRequired,
+  header: PropTypes.string.isRequired,
+  serviceName: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired
 };
 
 export default PostCard;

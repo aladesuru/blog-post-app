@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 // import component
 import PostCard from "../PostCard";
@@ -43,6 +44,7 @@ class PostCardList extends Component {
 
             let publishDate = post.item_published.split(" ");
             publishDate = publishDate[0];
+
             return (
               <PostCard
                 key={post.item_id}
@@ -63,4 +65,9 @@ class PostCardList extends Component {
     );
   }
 }
+
+PostCardList.propTypes = {
+  listOfPost: PropTypes.arrayOf(PropTypes.object).isRequired,
+  filterPost: PropTypes.arrayOf(PropTypes.object)
+};
 export default PostCardList;
