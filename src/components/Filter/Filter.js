@@ -3,8 +3,8 @@ import React from "react";
 import Button from "../Button";
 
 const Filter = ({ filterPost }) => {
-  const twitterClick = e => {
-    filterPost(e.target.id);
+  const postCategoryClick = e => {
+    filterPost(e.target.title);
   };
 
   return (
@@ -19,10 +19,10 @@ const Filter = ({ filterPost }) => {
             </label>
           </h1>
         </div>
-        <div className="filter-button-container" onClick={twitterClick}>
-          <Button id="manual" />
-          <Button buttonLabel="Twitter" bgColor="#00acee" id="twitter" />
-          <Button buttonLabel="Instagram" bgColor="#3f729b" id="instagram" />
+        <div className="filter-button-container" onClick={postCategoryClick}>
+          <Button title="manual" />
+          <Button buttonLabel="Twitter" bgColor="#00acee" title="twitter" />
+          <Button buttonLabel="Instagram" bgColor="#3f729b" title="instagram" />
         </div>
       </div>
     </div>
