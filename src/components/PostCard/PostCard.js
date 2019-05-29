@@ -11,7 +11,7 @@ const Link = ({ link }) => {
     </a>
   );
 };
-// { url, text, header, link, icon }
+
 const PostCard = ({ url, text, publishDate, header, link, serviceName }) => {
   return (
     <article className="postcard-container">
