@@ -1,12 +1,12 @@
 import React from "react";
 // import PropTypes from 'prop-types';
 
-const Button = ({ buttonLabel, bgColor, color, id }) => {
+const Button = ({ buttonLabel, bgColor, color, title }) => {
   return (
     <button
       type="button"
       className="btn"
-      id={id}
+      title={title}
       style={{ backgroundColor: bgColor, color: color }}
     >
       {buttonLabel}
@@ -18,7 +18,7 @@ Button.defaultProps = {
   buttonLabel: "Manual",
   color: "#fff",
   bgColor: "#e62718",
-  id: "all"
+  title: "general"
 };
 
 export default Button;
