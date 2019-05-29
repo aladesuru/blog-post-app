@@ -6,7 +6,7 @@ import Button from "../Button";
 const LoadMorePost = ({ loadMorePost }) => {
   return (
     <div className="loadmore-post" onClick={loadMorePost}>
-      <Button buttonLabel="Load More Post" bgColor="#777" />
+      <Button buttonLabel="Load More Post" bgColor="#358ace" />
     </div>
   );
 };
