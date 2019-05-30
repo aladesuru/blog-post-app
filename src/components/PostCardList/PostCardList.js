@@ -19,13 +19,20 @@ class PostCardList extends Component {
   };
 
   render() {
-    const { listOfPost, filteredPost } = this.props;
+    const { listOfPost, qryString } = this.props;
+
+    // filter post to list
+    let filterPost = listOfPost.filter(
+      post => post.service_name.toLowerCase() === qryString.toLowerCase()
+    );
+
     //callback function for sort method
     const latestToOldDate = (a, b) => {
       return Date.parse(b.item_published) - Date.parse(a.item_published);
     };
+
     // check which post to list
-    let post = filteredPost.length > 0 ? filteredPost : listOfPost;
+    let post = filterPost.length > 0 ? filterPost : listOfPost;
 
     return (
       <div className="postcardlist-container">
