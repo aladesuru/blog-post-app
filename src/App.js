@@ -14,7 +14,8 @@ class App extends Component {
     post: [],
     filteredPost: [],
     isLoading: true,
-    error: false
+    error: false,
+    qryString: ""
   };
 
   componentDidMount() {
@@ -40,26 +41,14 @@ class App extends Component {
   };
 
   // callback funtion as props for the production list component
-  filterPost = qryString => {
+  filterPost = qryStringValue => {
     this.FetchPostFrmAPI();
-    let result;
-    if (qryString === "twitter") {
-      result = this.state.post.filter(
-        post => post.service_name.toLowerCase() === qryString.toLowerCase()
-      );
-    } else if (qryString === "instagram") {
-      result = this.state.post.filter(
-        post => post.service_name.toLowerCase() === qryString.toLowerCase()
-      );
-    } else {
-      result = this.state.post.filter(
-        post => post.service_name.toLowerCase() === qryString.toLowerCase()
-      );
-    }
-    if (result.length > 0) {
+    if (qryStringValue !== " " && qryStringValue) {
       this.setState({
-        filteredPost: result
+        qryString: qryStringValue
       });
+
+      console.log("query string is", this.state.qryString);
     }
   };
 
@@ -79,7 +68,9 @@ class App extends Component {
                   <Filter filterPost={this.filterPost} />
                   <PostCardList
                     listOfPost={this.state.post}
-                    filteredPost={this.state.filteredPost}
+                    qryString={this.state.qryString}
+
+                    // filteredPost={this.state.filteredPost}
                   />
                 </Layout>
               </div>
