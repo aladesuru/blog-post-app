@@ -12,7 +12,6 @@ import ErrorComponent from "./components/ErrorComponent";
 class App extends Component {
   state = {
     post: [],
-    filteredPost: [],
     isLoading: true,
     error: false,
     qryString: ""
@@ -21,6 +20,7 @@ class App extends Component {
   componentDidMount() {
     this.FetchPostFrmAPI();
   }
+
   // method use to fetch the data
   FetchPostFrmAPI = () => {
     axios
@@ -40,15 +40,13 @@ class App extends Component {
       });
   };
 
-  // callback funtion as props for the production list component
+  // callback funtion as props for the filter component to update qryString
   filterPost = qryStringValue => {
     this.FetchPostFrmAPI();
     if (qryStringValue !== " " && qryStringValue) {
       this.setState({
         qryString: qryStringValue
       });
-
-      console.log("query string is", this.state.qryString);
     }
   };
 
@@ -69,8 +67,6 @@ class App extends Component {
                   <PostCardList
                     listOfPost={this.state.post}
                     qryString={this.state.qryString}
-
-                    // filteredPost={this.state.filteredPost}
                   />
                 </Layout>
               </div>

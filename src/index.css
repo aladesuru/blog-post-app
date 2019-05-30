@@ -234,7 +234,7 @@ time {
 
 .postcard-container {
   margin: 30px 0px;
-  border-bottom: 1px solid #eee;
+  border: 1px solid #eee;
   animation: fadeIn 0.5s ease-in;
 }
 .postcard-container header {
@@ -264,7 +264,6 @@ time {
 
 @media all and (min-width: 769px) {
   .postcard-container {
-    border: 1px solid #eee;
     min-height: 400px;
   }
 

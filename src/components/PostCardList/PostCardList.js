@@ -21,7 +21,7 @@ class PostCardList extends Component {
   render() {
     const { listOfPost, qryString } = this.props;
 
-    // filter post to list
+    // filter post using query string
     let filterPost = listOfPost.filter(
       post => post.service_name.toLowerCase() === qryString.toLowerCase()
     );
@@ -75,6 +75,6 @@ class PostCardList extends Component {
 
 PostCardList.propTypes = {
   listOfPost: PropTypes.arrayOf(PropTypes.object).isRequired,
-  filterPost: PropTypes.arrayOf(PropTypes.object)
+  qryString: PropTypes.string.isRequired
 };
 export default PostCardList;
