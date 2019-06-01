@@ -14,7 +14,7 @@ const Filter = ({ filterPost }) => {
         <input type="checkbox" id="toggle-collapse" />
         <div className="filter-heading">
           <h1>
-            <span>Posts Category</span>
+            <span>Select Post Category</span>
             <label htmlFor="toggle-collapse" className="icon" />
           </h1>
         </div>
