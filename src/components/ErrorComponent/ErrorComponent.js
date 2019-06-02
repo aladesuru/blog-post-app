@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const ErrorComponent = ({ content }) => {
   return (
     <div className="error-container">
-      <p>{content} </p>
+      <p data-testid="err-msg">{content} </p>
     </div>
   );
 };

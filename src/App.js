@@ -33,7 +33,7 @@ class App extends Component {
         });
       })
       .catch(error => {
-        // handle error: for the purpose of the code test ,in real world is different
+        // handle error
         this.setState({
           error: true
         });
